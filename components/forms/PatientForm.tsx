@@ -97,7 +97,7 @@ export const PatientForm =() => {
         label="Phone Number"
         placeholder=" 98765XXXXX"
         iconSrc="/assets/icons/email.svg"
-        iconAlt="email"
+        iconAlt="phone"
         />
         
         <SubmitButton isLoading={isLoading} > Get Started </SubmitButton>
