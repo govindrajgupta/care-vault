@@ -4,24 +4,24 @@ import Image from "next/image";
 import Link from "next/link";
 
 
-export default function Home({ searchParams }: SearchParamProps) {
-  const isAdmin = searchParams.admin === "true";
+const Home = ({searchParams}:SearchParamProps) => {
+  const isAdmin=searchParams?.admin==="true";
 
   return (
     <div className="flex h-screen max-h-screen">
 
-      {isAdmin && <PassKeyModal />}
+      {isAdmin&&<PassKeyModal/>}
 
-      <section className="remove-scrollbar container my-auto ">
+      <section className="remove-scrollbar container ">
         <div className="sub-container max-w-[496px]">
-
         <Image 
-        src="/assets/icons/logo-full.svg"
+        src="/assets/images/logo.png"
         height={1000}
         width={1000}
         alt="patient"
-        className="mb-12 h-10 w-fit"
+        className="mb-12 h-20 w-fit"
         />
+
 
         <PatientForm />
 
@@ -30,7 +30,7 @@ export default function Home({ searchParams }: SearchParamProps) {
           © 2024 CareVaultX. All rights reserved.
           </p>
         <div className=" text-14-regular mt-20 flex justify-between">
-          <Link href="/?admin = true" className="text-green-500">
+          <Link href="/?admin=true" className="text-green-500">
             Admin
           </Link>
 
@@ -51,5 +51,7 @@ export default function Home({ searchParams }: SearchParamProps) {
     </div>
   );
 };
+
+export default Home;
 
 
